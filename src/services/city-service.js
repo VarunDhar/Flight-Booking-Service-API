@@ -42,6 +42,7 @@ async function getOneCity(data){
         if(error.statusCode == StatusCodes.NOT_FOUND){
             throw new AppError("Error: Invalid id request for get one city", StatusCodes.NOT_FOUND);
         }
+        console.log(error);
         throw new AppError("Error: GetOne city", StatusCodes.INTERNAL_SERVER_ERROR);
     }
 }
