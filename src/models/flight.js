@@ -16,9 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       }),
       this.belongsTo(models.Airport,{
         foreignKey:'departureAirportId',
+        as:'departure_airport'
       })
       this.belongsTo(models.Airport,{
         foreignKey:'arrivalAirportId',
+        as:'arrival_airport'
       })
     }
   }
@@ -57,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     boardingGate: {
       type:DataTypes.STRING,
+      defaultValue:'TBA'
     }
   }, {
     sequelize,
